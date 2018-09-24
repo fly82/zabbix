@@ -1,0 +1,29 @@
+---
+- hosts: 127.0.0.1
+  tasks:
+
+  - name: Create a new host or update an existing host's info
+    local_action:
+      module: zabbix_host
+      server_url: http://localhost/api_jsonrpc.php
+      login_user: Admin
+      login_password: zabbix
+      host_name: "{{ item.name_host }}"
+      visible_name: "{{ item.vis_name }}"
+      description: "{{ item.descr }}"
+      host_groups:
+        - Linux servers
+      link_templates:
+        - Test Template
+      status: enabled
+      state: present
+      interfaces:
+        - type: 1
+          main: 1
+          useip: 1
+          ip: 127.0.0.1
+          dns: ""
+          port: 10050
+    with_items:
+      - { name_host: 'host1', vis_name: 'host 1', descr: 'test1' }
+      - { name_host: 'host2', vis_name: 'host 2', descr: 'test2' }

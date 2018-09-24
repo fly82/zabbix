@@ -1,0 +1,6 @@
+---
+- name: add new template zabbix
+  hosts: 127.0.0.1
+  roles:
+    - zab_add_template
+

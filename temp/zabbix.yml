@@ -1,0 +1,61 @@
+---
+- hosts: 127.0.0.1
+  tasks:
+
+# Import a template from Ansible variable dict
+    - name: Import Zabbix Template
+      zabbix_template:
+        login_user: Admin	
+        login_password: zabbix
+        server_url: http://localhost/api_jsonrpc.php
+        template_name: Test Template
+        template_json:
+          zabbix_export:
+            version: '3.4'
+            templates:
+              - name: Template for Testing
+                description: 'Testing template import'
+                template: Test Template
+                groups:
+                  - name: Templates
+                applications:
+                  - name: test
+                items:
+                  - allowed_hosts: ''
+                  - applications:
+                      - name: test
+                  - authtype: 0
+                  - delay: 30s
+                  - description: ''
+                  - history: 90d
+                  - inventory_link: 0
+                  - ipmi_sensor: ''
+                  - jmx_endpoint: ''
+                  - key: agent.ping
+                  - logtimefmt: ''
+                  - master_item:
+                  - name: rrr
+                  - params: ''
+                  - password: ''
+                  - port: ''
+                  - preprocessing: 
+                  - privatekey: ''
+                  - publickey: ''
+                  - snmp_community: ''
+                  - snmp_oid: ''
+                  - snmpv3_authpassphrase: ''
+                  - snmpv3_authprotocol: 0
+                  - snmpv3_contextname: ''
+                  - snmpv3_privpassphrase: ''
+                  - snmpv3_privprotocol: 0
+                  - snmpv3_securitylevel: 0
+                  - snmpv3_securityname: ''
+                  - status: 0
+                  - trends: 365d
+                  - type: 0
+                  - units: ''
+                  - username: ''
+                  - value_type: 3
+                  - valuemap:
+        state: dump
+

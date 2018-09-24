@@ -1,0 +1,699 @@
+{
+  "zabbix_export": {
+    "version": "3.0",
+    "date": "2016-11-08T09:03:20Z",
+    "groups": {
+      "group": { "name": "Templates" }
+    },
+    "templates": {
+      "template": {
+        "template": "Template Virt VMware Hypervisor",
+        "name": "Template Virt VMware Hypervisor",
+        "groups": {
+          "group": { "name": "Templates" }
+        },
+        "applications": {
+          "application": [
+            { "name": "CPU" },
+            { "name": "Datastore" },
+            { "name": "General" },
+            { "name": "Hardware" },
+            { "name": "Memory" },
+            { "name": "Network" }
+          ]
+        },
+        "items": {
+          "item": [
+            {
+              "name": "Cluster name",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.cluster.name[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Cluster name of the guest VM.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              }
+            },
+            {
+              "name": "CPU usage",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.cpu.usage[{$URL},{HOST.HOST}]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "Hz",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Aggregated CPU usage across all cores on the host in Hz. This is only available if the host is connected.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "CPU" }
+              }
+            },
+            {
+              "name": "Full name",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.fullname[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The complete product name, including the version information.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              }
+            },
+            {
+              "name": "CPU frequency",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.cpu.freq[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "Hz",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The speed of the CPU cores. This is an average value if there are multiple speeds. The product of CPU frequency and number of cores is approximately equal to the sum of the MHz for all the individual cores on the host.",
+              "inventory_link": "0",
+              "applications": {
+                "application": [
+                  { "name": "CPU" },
+                  { "name": "Hardware" }
+                ]
+              }
+            },
+            {
+              "name": "CPU model",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.cpu.model[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The CPU model.",
+              "inventory_link": "0",
+              "applications": {
+                "application": [
+                  { "name": "CPU" },
+                  { "name": "Hardware" }
+                ]
+              }
+            },
+            {
+              "name": "CPU cores",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.cpu.num[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Number of physical CPU cores on the host. Physical CPU cores are the processors contained by a CPU package.",
+              "inventory_link": "0",
+              "applications": {
+                "application": [
+                  { "name": "CPU" },
+                  { "name": "Hardware" }
+                ]
+              }
+            },
+            {
+              "name": "CPU threads",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.cpu.threads[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Number of physical CPU threads on the host.",
+              "inventory_link": "0",
+              "applications": {
+                "application": [
+                  { "name": "CPU" },
+                  { "name": "Hardware" }
+                ]
+              }
+            },
+            {
+              "name": "Total memory",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.memory[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "B",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The physical memory size.",
+              "inventory_link": "0",
+              "applications": {
+                "application": [
+                  { "name": "Hardware" },
+                  { "name": "Memory" }
+                ]
+              }
+            },
+            {
+              "name": "Model",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.model[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The system model identification.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Hardware" }
+              }
+            },
+            {
+              "name": "Bios UUID",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.uuid[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The hardware BIOS identification.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Hardware" }
+              }
+            },
+            {
+              "name": "Vendor",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.hw.vendor[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The hardware vendor identification.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Hardware" }
+              }
+            },
+            {
+              "name": "Ballooned memory",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.memory.size.ballooned[{$URL},{HOST.HOST}]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "B",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The amount of guest physical memory that is currently reclaimed through the balloon driver. Sum of all guest VMs.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Memory" }
+              }
+            },
+            {
+              "name": "Used memory",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.memory.used[{$URL},{HOST.HOST}]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "B",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Physical memory usage on the host.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Memory" }
+              }
+            },
+            {
+              "name": "Number of bytes received",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.network.in[{$URL},{HOST.HOST},bps]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "Bps",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Network" }
+              }
+            },
+            {
+              "name": "Number of bytes transmitted",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.network.out[{$URL},{HOST.HOST},bps]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "Bps",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "Network" }
+              }
+            },
+            {
+              "name": "Health state rollup",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.sensor.health.state[{$URL},{HOST.HOST}]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The host health state rollup sensor value: gray - unknown, ok, red - it has a problem, yellow - it might have a problem.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              },
+              "valuemap": { "name": "VMware status" }
+            },
+            {
+              "name": "Overall status",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.status[{$URL},{HOST.HOST}]",
+              "delay": "60",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "The overall alarm status of the host: gray - unknown, ok, red - it has a problem, yellow - it might have a problem.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              },
+              "valuemap": { "name": "VMware status" }
+            },
+            {
+              "name": "Uptime",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.uptime[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "units": "uptime",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "System uptime.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              }
+            },
+            {
+              "name": "Version",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.version[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "0",
+              "status": "0",
+              "value_type": "1",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Dot-separated version string.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              }
+            },
+            {
+              "name": "Number of guest VMs",
+              "type": "3",
+              "multiplier": "0",
+              "key": "vmware.hv.vm.num[{$URL},{HOST.HOST}]",
+              "delay": "3600",
+              "history": "90",
+              "trends": "365",
+              "status": "0",
+              "value_type": "3",
+              "delta": "0",
+              "snmpv3_securitylevel": "0",
+              "snmpv3_authprotocol": "0",
+              "snmpv3_privprotocol": "0",
+              "formula": "1",
+              "data_type": "0",
+              "authtype": "0",
+              "username": "{$USERNAME}",
+              "password": "{$PASSWORD}",
+              "description": "Number of guest virtual machines.",
+              "inventory_link": "0",
+              "applications": {
+                "application": { "name": "General" }
+              }
+            }
+          ]
+        },
+        "discovery_rules": {
+          "discovery_rule": {
+            "name": "Datastore discovery",
+            "type": "3",
+            "key": "vmware.hv.datastore.discovery[{$URL},{HOST.HOST}]",
+            "delay": "3600",
+            "status": "0",
+            "snmpv3_securitylevel": "0",
+            "snmpv3_authprotocol": "0",
+            "snmpv3_privprotocol": "0",
+            "authtype": "0",
+            "username": "{$USERNAME}",
+            "password": "{$PASSWORD}",
+            "filter": { "evaltype": "0" },
+            "lifetime": "30",
+            "item_prototypes": {
+              "item_prototype": [
+                {
+                  "name": "Average read latency of the datastore $3",
+                  "type": "3",
+                  "multiplier": "0",
+                  "key": "vmware.hv.datastore.read[{$URL},{HOST.HOST},{#DATASTORE},latency]",
+                  "delay": "60",
+                  "history": "90",
+                  "trends": "365",
+                  "status": "0",
+                  "value_type": "3",
+                  "delta": "0",
+                  "snmpv3_securitylevel": "0",
+                  "snmpv3_authprotocol": "0",
+                  "snmpv3_privprotocol": "0",
+                  "formula": "1",
+                  "data_type": "0",
+                  "authtype": "0",
+                  "username": "{$USERNAME}",
+                  "password": "{$PASSWORD}",
+                  "inventory_link": "0",
+                  "applications": {
+                    "application": { "name": "Datastore" }
+                  }
+                },
+                {
+                  "name": "Free space on datastore $3 (percentage)",
+                  "type": "3",
+                  "multiplier": "0",
+                  "key": "vmware.hv.datastore.size[{$URL},{HOST.HOST},{#DATASTORE},pfree]",
+                  "delay": "60",
+                  "history": "90",
+                  "trends": "365",
+                  "status": "0",
+                  "value_type": "0",
+                  "units": "%",
+                  "delta": "0",
+                  "snmpv3_securitylevel": "0",
+                  "snmpv3_authprotocol": "0",
+                  "snmpv3_privprotocol": "0",
+                  "formula": "1",
+                  "data_type": "0",
+                  "authtype": "0",
+                  "username": "{$USERNAME}",
+                  "password": "{$PASSWORD}",
+                  "inventory_link": "0",
+                  "applications": {
+                    "application": { "name": "Datastore" }
+                  }
+                },
+                {
+                  "name": "Total size of datastore $3",
+                  "type": "3",
+                  "multiplier": "0",
+                  "key": "vmware.hv.datastore.size[{$URL},{HOST.HOST},{#DATASTORE}]",
+                  "delay": "60",
+                  "history": "90",
+                  "trends": "365",
+                  "status": "0",
+                  "value_type": "3",
+                  "units": "B",
+                  "delta": "0",
+                  "snmpv3_securitylevel": "0",
+                  "snmpv3_authprotocol": "0",
+                  "snmpv3_privprotocol": "0",
+                  "formula": "1",
+                  "data_type": "0",
+                  "authtype": "0",
+                  "username": "{$USERNAME}",
+                  "password": "{$PASSWORD}",
+                  "inventory_link": "0",
+                  "applications": {
+                    "application": { "name": "Datastore" }
+                  }
+                },
+                {
+                  "name": "Average write latency of the datastore $3",
+                  "type": "3",
+                  "multiplier": "0",
+                  "key": "vmware.hv.datastore.write[{$URL},{HOST.HOST},{#DATASTORE},latency]",
+                  "delay": "60",
+                  "history": "90",
+                  "trends": "365",
+                  "status": "0",
+                  "value_type": "3",
+                  "delta": "0",
+                  "snmpv3_securitylevel": "0",
+                  "snmpv3_authprotocol": "0",
+                  "snmpv3_privprotocol": "0",
+                  "formula": "1",
+                  "data_type": "0",
+                  "authtype": "0",
+                  "username": "{$USERNAME}",
+                  "password": "{$PASSWORD}",
+                  "inventory_link": "0",
+                  "applications": {
+                    "application": { "name": "Datastore" }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "value_maps": {
+      "value_map": {
+        "name": "VMware status",
+        "mappings": {
+          "mapping": [
+            {
+              "value": "0",
+              "newvalue": "gray"
+            },
+            {
+              "value": "1",
+              "newvalue": "green"
+            },
+            {
+              "value": "2",
+              "newvalue": "yellow"
+            },
+            {
+              "value": "3",
+              "newvalue": "red"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
