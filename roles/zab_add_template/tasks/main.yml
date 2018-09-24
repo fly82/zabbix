@@ -1,35 +1,30 @@
 ---
-# Import a template from Ansible variable dict
-    - name: Import Zabbix Template
-      zabbix_template:
-        login_user: Admin
-        login_password: zabbix
-        server_url: http://localhost/api_jsonrpc.php
-        template_name: Test Template
-        template_json:
-          zabbix_export:
-            version: '3.2'
-            templates:
-              - name: Template for Testing
-                description: 'Testing template import'
-                template: Test Template
-                groups:
-                  - name: Templates
-                applications:
-                  - name: Test Applicatio555
-                items:
-                  - name: test
-                  - allowed_hosts: 
-                  - applications:  
-                  - authtype: 
-                  - delay: 30s 
-                  - description:  
-                  - history: 90d 
-                  - inventory_link: 0 
-                  - key: 'test'
-                  - logtimefmt:  
-                  - master_item:  
-                  - name: test1 
-        template_groups: Templates
-        state: dump
+- name: Create Zabbix Template
+  zabbix_template:
+    login_user: Admin
+    login_password: zabbix
+    server_url: http://localhost/api_jsonrpc.php
+    template_name: '{{ name_template }}'
+    template_json:
+      zabbix_export:
+      date: '2018-09-24T07:44:10Z'
+      version: '3.4'
+      templates:
+        - name: '{{ name_template }}'
+          description: 'Testing template import'
+          template: '{{ name_template}}'
+          groups:
+            - name: Templates
+    template_groups: Templates
+    state: present
+  ignore_errors: True
+
+- name: Import Zabbix Template
+  zabbix_template:
+    login_user: Admin
+    login_password: zabbix
+    server_url: http://localhost/api_jsonrpc.php
+    template_name: '{{ name_template}}'
+    template_json: "{{ lookup('template', 'zab_templ.j2') }}"
+    state: present
 

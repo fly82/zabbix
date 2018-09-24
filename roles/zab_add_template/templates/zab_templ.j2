@@ -1,23 +1,29 @@
 {
 	"zabbix_export": {
-		"date": "2018-09-24T03:48:03Z",
+		"date": "2018-09-24T18:35:15Z",
 		"groups": [{
 			"name": "Templates"
 		}],
 		"templates": [{
-			"applications": [{
-				"name": "test"
-			}],
-			"description": "",
+			"applications": [
+                        {% for item in zabbix_app %}
+                        {
+				"name": "{{ item.name_app }}"
+                        }{% if not loop.last %},{% endif %}
+                        {% endfor %}
+			],
+			"description": "Testing template import",
 			"discovery_rules": [],
 			"groups": [{
 				"name": "Templates"
 			}],
 			"httptests": [],
-			"items": [{
+			"items": [
+                        {% for item in zabbix_app %}
+                        {
 				"allowed_hosts": "",
 				"applications": [{
-					"name": "test"
+					"name": "{{ item.name_app }}"
 				}],
 				"authtype": "0",
 				"delay": "30s",
@@ -26,10 +32,10 @@
 				"inventory_link": "0",
 				"ipmi_sensor": "",
 				"jmx_endpoint": "",
-				"key": "agent.ping",
+				"key": "{{ item.port }}",
 				"logtimefmt": "",
 				"master_item": [],
-				"name": "test1",
+				"name": "{{ item.name_item }}",
 				"params": "",
 				"password": "",
 				"port": "",
@@ -52,11 +58,13 @@
 				"username": "",
 				"value_type": "3",
 				"valuemap": []
-			}],
+			}{% if not loop.last %},{% endif %}
+                        {% endfor %}
+                        ],
 			"macros": [],
-			"name": "Test Template",
+			"name": "{{ name_template }}",
 			"screens": [],
-			"template": "Test Template",
+			"template": "{{ name_template }}",
 			"templates": []
 		}],
 		"version": "3.4"

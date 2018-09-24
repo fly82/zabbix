@@ -1,2 +1,7 @@
 ---
-# vars file for zab_add_template
+name_template: "Test1"
+
+zabbix_app:
+  - { name_app: 'test6', name_item: 'test6i', port: 'net.tcp.listen[8080]' }
+  - { name_app: 'test7', name_item: 'test7i', port: 'net.tcp.listen[8081]' }
+  - { name_app: 'test8', name_item: 'test8i', port: 'net.tcp.listen[8082]' }

@@ -1,0 +1,72 @@
+{
+	"zabbix_export": {
+		"date": "2018-09-24T18:35:15Z",
+		"groups": [{
+			"name": "Templates"
+		}],
+		"templates": [{
+			"applications": [
+                        {% for item in zabbix_app %}
+                        {
+				"name": "{{ item.name }}"
+                        }{% if not loop.last %},{% endif %}
+                        {% endfor %}
+			],
+			"description": "Testing template import",
+			"discovery_rules": [],
+			"groups": [{
+				"name": "Templates"
+			}],
+			"httptests": [],
+			"items": [
+                        {% for item in zabbix_app %}
+                        {
+				"allowed_hosts": "",
+				"applications": [{
+					"name": "{{ item.name }}"
+				}],
+				"authtype": "0",
+				"delay": "30s",
+				"description": "",
+				"history": "90d",
+				"inventory_link": "0",
+				"ipmi_sensor": "",
+				"jmx_endpoint": "",
+				"key": "{{ item.name_key }}",
+				"logtimefmt": "",
+				"master_item": [],
+				"name": "{{ item.name_item }}",
+				"params": "",
+				"password": "",
+				"port": "",
+				"preprocessing": [],
+				"privatekey": "",
+				"publickey": "",
+				"snmp_community": "",
+				"snmp_oid": "",
+				"snmpv3_authpassphrase": "",
+				"snmpv3_authprotocol": "0",
+				"snmpv3_contextname": "",
+				"snmpv3_privpassphrase": "",
+				"snmpv3_privprotocol": "0",
+				"snmpv3_securitylevel": "0",
+				"snmpv3_securityname": "",
+				"status": "0",
+				"trends": "365d",
+				"type": "0",
+				"units": "",
+				"username": "",
+				"value_type": "3",
+				"valuemap": []
+			}{% if not loop.last %},{% endif %}
+                        {% endfor %}
+                        ],
+			"macros": [],
+			"name": "Test Template",
+			"screens": [],
+			"template": "Test Template",
+			"templates": []
+		}],
+		"version": "3.4"
+	}
+}
