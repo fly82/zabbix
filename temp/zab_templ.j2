@@ -74,7 +74,7 @@
                     "correlation_tag": "",
                     "dependencies": [],
                     "description": "",
-                    "expression": "{{{ name_template }}:{{ item.port }}.last()}<>1",
+                    "expression": "{{ '{' }}{{ name_template }}{{ ':' }}{{ item.port }}.last()}<>1",
                     "manual_close": "0",
                     "name": "{{ item.name_item }}",
                     "priority": "4",

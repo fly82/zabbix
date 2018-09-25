@@ -2,9 +2,10 @@
 - hosts: 127.0.0.1
   vars:
     zabbix_app:
-      - { name: 'test6', name_item: 'test6i', name_key: 'net.tcp.listen[8080]' }
-      - { name: 'test7', name_item: 'test7i', name_key: 'net.tcp.listen[8081]' }
-      - { name: 'test8', name_item: 'test8i', name_key: 'net.tcp.listen[8082]' } 
+      - { name_app: 'test6', name_item: 'test6i', port: 'net.tcp.listen[8080]' }
+      - { name_app: 'test7', name_item: 'test7i', port: 'net.tcp.listen[8081]' }
+      - { name_app: 'test8', name_item: 'test8i', port: 'net.tcp.listen[8082]' } 
+    name_template: "Test Template"
   tasks:
 
     - debug: msg={{ lookup('template', 'zab_templ.j2') }}
@@ -21,5 +22,7 @@
         server_url: http://localhost/api_jsonrpc.php
         template_name: Test Template
         template_json: "{{ lookup('template', 'zab_templ.j2') | to_json }}"
+        template_groups:
+          - Templates
         state: present
 
